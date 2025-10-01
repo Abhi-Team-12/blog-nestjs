@@ -5,5 +5,5 @@ export declare class OTPUser {
     user_contact: string;
     otp: string;
     created_at: Date;
-    verified_at: Date;
+    updated_at: Date;
 }

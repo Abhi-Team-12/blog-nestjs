@@ -18,7 +18,7 @@ let OTPUser = class OTPUser {
     user_contact;
     otp;
     created_at;
-    verified_at;
+    updated_at;
 };
 exports.OTPUser = OTPUser;
 __decorate([
@@ -42,13 +42,13 @@ __decorate([
     __metadata("design:type", String)
 ], OTPUser.prototype, "otp", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)(),
+    (0, typeorm_1.CreateDateColumn)({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' }),
     __metadata("design:type", Date)
 ], OTPUser.prototype, "created_at", void 0);
 __decorate([
-    (0, typeorm_1.UpdateDateColumn)(),
+    (0, typeorm_1.UpdateDateColumn)({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP', onUpdate: 'CURRENT_TIMESTAMP' }),
     __metadata("design:type", Date)
-], OTPUser.prototype, "verified_at", void 0);
+], OTPUser.prototype, "updated_at", void 0);
 exports.OTPUser = OTPUser = __decorate([
     (0, typeorm_1.Entity)('otp_logs')
 ], OTPUser);
