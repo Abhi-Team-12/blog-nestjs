@@ -19,7 +19,7 @@ import config from './config/config';
     UsersModule, TypeOrmModule.forRoot({
       type: 'mysql',
       host: process.env.DB_HOST,
-      port: process.env.DB_PORT ? +process.env.DB_PORT : 3306,
+      port: process.env.DB_PORT ? +process.env.DB_PORT : 23093,
       username: process.env.DB_USER,
       password: process.env.DB_PASS,
       database: process.env.DB_NAME,

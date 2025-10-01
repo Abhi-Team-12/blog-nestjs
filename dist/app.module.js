@@ -33,13 +33,16 @@ exports.AppModule = AppModule = __decorate([
             users_module_1.UsersModule, typeorm_1.TypeOrmModule.forRoot({
                 type: 'mysql',
                 host: process.env.DB_HOST,
-                port: process.env.DB_PORT ? +process.env.DB_PORT : 3306,
+                port: process.env.DB_PORT ? +process.env.DB_PORT : 23093,
                 username: process.env.DB_USER,
                 password: process.env.DB_PASS,
                 database: process.env.DB_NAME,
                 entities: [user_entity_1.register_user, verified_user_entity_1.User, otpuser_entity_1.OTPUser],
                 synchronize: true,
                 autoLoadEntities: true,
+                ssl: {
+                    rejectUnauthorized: false,
+                },
             }),
             mailer_1.MailerModule.forRoot({
                 transport: {
