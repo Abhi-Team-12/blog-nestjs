@@ -7,20 +7,20 @@ export class OTPUser {
 
   @Column()
   user_id: number;
-  
-  @Column()
-  user_email:string;
 
   @Column()
-  user_contact:string;
+  user_email: string;
+
+  @Column()
+  user_contact: string;
 
   @Column()
   otp: string;
 
-  @CreateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+  @CreateDateColumn({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP' })
   created_at: Date;
 
-  @UpdateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP', onUpdate: 'CURRENT_TIMESTAMP' })
+  @UpdateDateColumn({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP', onUpdate: 'CURRENT_TIMESTAMP' })
   updated_at: Date;
 
 }
