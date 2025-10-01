@@ -26,6 +26,9 @@ import config from './config/config';
       entities: [register_user, User, OTPUser],
       synchronize: true,
       autoLoadEntities: true,
+      ssl: {
+        rejectUnauthorized: false, // For Aiven DB SSL
+      },
     }),
     MailerModule.forRoot({
       transport: {
